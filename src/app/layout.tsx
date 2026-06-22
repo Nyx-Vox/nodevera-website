@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import MobileBottomFooter from "@/components/MobileBottomFooter";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -59,6 +60,7 @@ export default function RootLayout({
       <body>
         {children}
         <FloatingWhatsApp />
+        <MobileBottomFooter />
         <Analytics />
         <MicrosoftClarity />
       </body>

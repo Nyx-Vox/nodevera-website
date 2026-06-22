@@ -15,6 +15,10 @@ const navLinks = [
     href: "/services",
   },
   {
+    label: "Blog",
+    href: "/blog",
+  },
+  {
     label: "Cyber Audit",
     href: "/services/cyber-readiness-assessment",
   },

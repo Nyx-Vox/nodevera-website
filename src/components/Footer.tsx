@@ -9,6 +9,10 @@ const footerLinks = [
     href: "/services",
   },
   {
+    label: "Blog",
+    href: "/blog",
+  },
+  {
     label: "Cyber Readiness",
     href: "/services/cyber-readiness-assessment",
   },
@@ -34,17 +38,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white py-10">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr_0.8fr]">
+        <div className="grid gap-10 text-center md:text-left lg:grid-cols-[1.1fr_0.8fr_0.8fr]">
           <div>
-            <Logo />
+            <Logo variant="footer" className="mx-auto md:mx-0" />
 
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-600">
+            <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-slate-600 md:mx-0">
               Practical cybersecurity and IT consulting for growing businesses
               that want to protect systems, secure data, train staff, and build
               digital trust.
             </p>
 
-            <div className="mt-5 flex items-center gap-2 text-sm font-bold text-slate-600">
+            <div className="mt-5 flex items-center justify-center gap-2 text-sm font-bold text-slate-600 md:justify-start">
               <Layers3 className="h-4 w-4 text-cyan-500" />
               {siteConfig.tagline}
             </div>
@@ -55,7 +59,7 @@ export default function Footer() {
               Quick Links
             </h3>
 
-            <nav className="mt-5 flex flex-col gap-3 text-sm font-bold text-slate-600">
+            <nav className="mt-5 grid grid-cols-2 gap-3 text-sm font-bold text-slate-600 md:flex md:flex-col">
               {footerLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -76,7 +80,7 @@ export default function Footer() {
             <div className="mt-5 space-y-3 text-sm font-semibold text-slate-600">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-3 transition hover:text-cyan-600"
+                className="flex items-center justify-center gap-3 transition hover:text-cyan-600 md:justify-start"
               >
                 <Mail className="h-4 w-4 text-cyan-500" />
                 {siteConfig.email}
@@ -84,7 +88,7 @@ export default function Footer() {
 
               <a
                 href={`tel:${siteConfig.phoneHref}`}
-                className="flex items-center gap-3 transition hover:text-cyan-600"
+                className="flex items-center justify-center gap-3 transition hover:text-cyan-600 md:justify-start"
               >
                 <Phone className="h-4 w-4 text-cyan-500" />
                 {siteConfig.phoneDisplay}
@@ -94,14 +98,14 @@ export default function Footer() {
                 href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 transition hover:text-cyan-600"
+                className="flex items-center justify-center gap-3 transition hover:text-cyan-600 md:justify-start"
               >
                 <MessageCircle className="h-4 w-4 text-cyan-500" />
                 WhatsApp
               </a>
             </div>
 
-            <div className="mt-5 flex gap-3">
+            <div className="mt-5 flex justify-center gap-3 md:justify-start">
               <a
                 href={siteConfig.socials.linkedin}
                 target="_blank"
@@ -125,7 +129,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-200 pt-6">
+        <div className="mt-8 border-t border-slate-200 pt-6 text-center md:text-left">
           <p className="text-sm font-medium text-slate-500">
             © {new Date().getFullYear()} {siteConfig.fullName}. All rights
             reserved.

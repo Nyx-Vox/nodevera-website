@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://nodeveracyber.com",
 
   email: "info@nodeveracyber.com",
-phoneDisplay: "+234 703 562 2388",
+  phoneDisplay: "+234 703 562 2388",
   phoneHref: "+2347035622388",
   whatsappNumber: "2347035622388",
 
@@ -14,8 +14,8 @@ phoneDisplay: "+234 703 562 2388",
 
   socials: {
     linkedin: "https://www.linkedin.com/company/nodevera-cyber-it-services",
-    instagram: "www.instagram.com/nodeveracyberit",
-    x: "www.x.com/nodeveracyberit",
+    instagram: "https://www.instagram.com/nodeveracyberit",
+    x: "https://x.com/nodeveracyberit",
   },
 };
 

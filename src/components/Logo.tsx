@@ -1,34 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function LogoMark() {
+const logoSizes = {
+  header: "h-16 w-16 sm:h-[70px] sm:w-[70px]",
+  footer: "h-24 w-24",
+  compact: "h-12 w-12",
+};
+
+type LogoProps = {
+  variant?: keyof typeof logoSizes;
+  className?: string;
+  priority?: boolean;
+};
+
+export function LogoMark({ className = "h-11 w-11" }: { className?: string }) {
   return (
-    <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white">
+    <div className={`relative overflow-hidden rounded-2xl bg-white ${className}`}>
       <Image
         src="/images/nodevera-logo-mark.png"
         alt="NodeVera logo mark"
-        width={48}
-        height={48}
-        className="h-12 w-12 object-contain"
+        fill
+        sizes="48px"
+        className="object-contain"
         priority
       />
     </div>
   );
 }
 
-export default function Logo() {
+export default function Logo({
+  variant = "header",
+  className = "",
+  priority = true,
+}: LogoProps) {
   return (
-    <Link href="/" className="flex items-center gap-3">
-      <LogoMark />
-
-      <div>
-        <p className="text-xl font-black tracking-tight text-navy-950">
-          Node<span className="text-cyan-500">Vera</span>
-        </p>
-        <p className="-mt-1 text-xs font-semibold tracking-[0.28em] text-slate-500">
-          CYBER IT & SERVICES
-        </p>
-      </div>
+    <Link
+      href="/"
+      aria-label="NodeVera Cyber IT & Services home"
+      className={`inline-flex shrink-0 items-center justify-center ${className}`}
+    >
+      <Image
+        src="/images/nodevera-logo-full.png"
+        alt="NodeVera Cyber IT & Services logo"
+        width={160}
+        height={160}
+        sizes="(max-width: 640px) 64px, 76px"
+        className={`${logoSizes[variant]} object-contain`}
+        priority={priority}
+      />
     </Link>
   );
 }
