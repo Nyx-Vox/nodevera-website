@@ -9,6 +9,13 @@ export type SanityImage = {
     _ref?: string;
     _type?: "reference";
   };
+  assetMetadata?: {
+    dimensions?: {
+      width?: number;
+      height?: number;
+      aspectRatio?: number;
+    };
+  };
 };
 
 export type BlogPostCard = {
@@ -35,7 +42,10 @@ export const postsQuery = `*[_type == "post" && defined(slug.current)] | order(p
   category,
   publishedAt,
   readTime,
-  mainImage
+  mainImage {
+    ...,
+    "assetMetadata": asset->metadata { dimensions }
+  }
 }`;
 
 export const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
@@ -45,7 +55,10 @@ export const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   category,
   publishedAt,
   readTime,
-  mainImage,
+  mainImage {
+    ...,
+    "assetMetadata": asset->metadata { dimensions }
+  },
   seoTitle,
   seoDescription,
   authorName,

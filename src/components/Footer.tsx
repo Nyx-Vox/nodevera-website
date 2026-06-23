@@ -9,16 +9,24 @@ const footerLinks = [
     href: "/services",
   },
   {
+    label: "Packages",
+    href: "/packages",
+  },
+  {
+    label: "Book Consultation",
+    href: "/consultation",
+  },
+  {
+    label: "Free Checklist",
+    href: "/free-cyber-readiness-checklist",
+  },
+  {
+    label: "Sample Report",
+    href: "/sample-report-preview",
+  },
+  {
     label: "Blog",
     href: "/blog",
-  },
-  {
-    label: "Cyber Readiness",
-    href: "/services/cyber-readiness-assessment",
-  },
-  {
-    label: "Security Training",
-    href: "/services/security-awareness-training",
   },
   {
     label: "Privacy Policy",
@@ -27,10 +35,6 @@ const footerLinks = [
   {
     label: "Terms",
     href: "/terms",
-  },
-  {
-    label: "Contact",
-    href: "/#contact",
   },
 ];
 

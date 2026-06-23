@@ -86,16 +86,17 @@ const portableTextComponents: PortableTextComponents = {
         return null;
       }
 
-      const imageUrl = urlFor(value).width(1200).height(680).fit("crop").url();
+      const imageUrl = urlFor(value).width(1200).height(680).fit("max").auto("format").url();
 
       return (
-        <div className="relative my-8 h-[260px] overflow-hidden rounded-[1.5rem] bg-slate-100 sm:h-[420px]">
+        <div className="my-8 overflow-hidden rounded-[1.5rem] bg-slate-100">
           <Image
             src={imageUrl}
             alt={value.alt || "NodeVera blog image"}
-            fill
+            width={1200}
+            height={680}
             sizes="(min-width: 1024px) 900px, 100vw"
-            className="object-cover"
+            className="h-auto w-full object-contain p-2 sm:p-3"
           />
         </div>
       );
@@ -173,7 +174,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
   const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
   const heroImageUrl = post.mainImage
-    ? urlFor(post.mainImage).width(1400).height(760).fit("crop").url()
+    ? urlFor(post.mainImage).width(1400).height(760).fit("max").auto("format").url()
     : null;
 
   return (
@@ -226,14 +227,15 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
         {heroImageUrl ? (
           <section className="px-5 pt-10 sm:px-6 lg:px-8">
-            <div className="relative mx-auto h-[260px] max-w-5xl overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl shadow-slate-950/10 sm:h-[460px]">
+            <div className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-slate-100 shadow-xl shadow-slate-950/10">
               <Image
                 src={heroImageUrl}
                 alt={post.mainImage?.alt || post.title}
-                fill
+                width={post.mainImage?.assetMetadata?.dimensions?.width || 1400}
+                height={post.mainImage?.assetMetadata?.dimensions?.height || 760}
                 priority
                 sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
+                className="h-auto w-full object-contain p-2 sm:p-3"
               />
             </div>
           </section>
@@ -269,7 +271,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                 </p>
 
                 <Link
-                  href="/#contact"
+                  href="/consultation"
                   className="mt-5 inline-flex items-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-black text-navy-950 transition hover:bg-white"
                 >
                   Book Consultation

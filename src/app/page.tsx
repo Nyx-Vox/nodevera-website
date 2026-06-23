@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
+import ServicePackagesSection from "@/components/ServicePackagesSection";
 import { siteConfig } from "@/lib/site";
 
 import {
@@ -162,7 +163,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href="#contact"
+                href="/consultation"
                 className="group inline-flex items-center justify-center rounded-full bg-navy-950 px-7 py-4 text-base font-bold text-white shadow-xl shadow-navy-950/20 transition hover:-translate-y-0.5 hover:bg-cyan-500"
               >
                 Book a Consultation
@@ -413,6 +414,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ServicePackagesSection />
+
       {/* Audit */}
       <section id="audit" className="bg-navy-950 py-16 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-8">
@@ -448,10 +451,10 @@ export default function Home() {
             </div>
 
             <a
-              href="#contact"
+              href="/consultation?package=Cyber%20Readiness%20Starter"
               className="mt-8 inline-flex items-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
             >
-              Request an Audit
+              Request an Assessment
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </div>

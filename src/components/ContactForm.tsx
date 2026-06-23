@@ -167,12 +167,14 @@ export default function ContactForm() {
           onChange={updateField}
           className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100"
         >
+          <option>Cyber Readiness Starter</option>
+          <option>Business Email Protection</option>
+          <option>Staff Scam Awareness Training</option>
+          <option>Monthly Cyber Advisor</option>
           <option>Cyber Readiness Assessment</option>
           <option>IT Security Consulting</option>
           <option>Data Protection Support</option>
-          <option>Security Awareness Training</option>
           <option>Phishing Defense Education</option>
-          <option>Monthly Cyber Advisor</option>
           <option>General Inquiry</option>
         </select>
       </div>
@@ -233,7 +235,7 @@ export default function ContactForm() {
           </>
         ) : (
           <>
-            Send Message
+            Send Inquiry
             <ArrowRight className="ml-2 h-5 w-5" />
           </>
         )}

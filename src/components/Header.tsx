@@ -15,20 +15,20 @@ const navLinks = [
     href: "/services",
   },
   {
+    label: "Packages",
+    href: "/packages",
+  },
+  {
     label: "Blog",
     href: "/blog",
   },
   {
-    label: "Cyber Audit",
-    href: "/services/cyber-readiness-assessment",
+    label: "Checklist",
+    href: "/free-cyber-readiness-checklist",
   },
   {
-    label: "About",
-    href: "/#about",
-  },
-  {
-    label: "Contact",
-    href: "/#contact",
+    label: "Report Preview",
+    href: "/sample-report-preview",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Logo />
 
-        <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 lg:flex">
+        <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-700 lg:flex xl:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -58,7 +58,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href="/#contact"
+            href="/consultation"
             className="rounded-full bg-navy-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-navy-950/15 transition hover:-translate-y-0.5 hover:bg-cyan-500"
           >
             Book Consultation
@@ -90,7 +90,7 @@ export default function Header() {
             ))}
 
             <Link
-              href="/#contact"
+              href="/consultation"
               onClick={closeMenu}
               className="mt-3 rounded-full bg-navy-950 px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-cyan-500"
             >

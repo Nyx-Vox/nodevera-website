@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getServiceBySlug, services } from "@/lib/services";
+import { getServiceFaqs } from "@/lib/service-faqs";
 
 type PageProps = {
   params: Promise<{
@@ -50,6 +51,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   if (!service) {
     notFound();
   }
+
+  const faqs = getServiceFaqs(service.slug);
 
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -92,10 +95,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/#contact"
+                href={`/consultation?package=${encodeURIComponent(service.title)}`}
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
               >
-                Request This Service
+                Book Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
 
@@ -229,6 +232,41 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+
+      {/* Service FAQ */}
+      <section className="px-5 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-600">
+              Service FAQ
+            </p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-navy-950 sm:text-4xl">
+              Questions businesses ask before starting.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              These answers help you understand what to expect before booking a
+              consultation for this service.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-black text-navy-950">
+                  {faq.question}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related services */}
       <section className="px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -299,10 +337,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
 
             <Link
-              href="/#contact"
+              href={`/consultation?package=${encodeURIComponent(service.title)}`}
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
             >
-              Contact NodeVera
+              Book Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

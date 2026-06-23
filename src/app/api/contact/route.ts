@@ -168,6 +168,11 @@ export async function POST(request: Request) {
     const service = cleanText(body.service, 120);
     const message = cleanText(body.message, MAX_FIELD_LENGTH);
     const website = cleanText(body.website, 120);
+    const consultationType = cleanText(body.consultationType, 160);
+    const packageName = cleanText(body.packageName, 160);
+    const businessType = cleanText(body.businessType, 160);
+    const preferredMode = cleanText(body.preferredMode, 120);
+    const urgency = cleanText(body.urgency, 120);
 
     // Honeypot spam protection. Real users will not fill this hidden field.
     if (website) {
@@ -212,6 +217,11 @@ export async function POST(request: Request) {
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone || "Not provided");
     const safeService = escapeHtml(service || "Not provided");
+    const safeConsultationType = escapeHtml(consultationType || "Not provided");
+    const safePackageName = escapeHtml(packageName || "Not provided");
+    const safeBusinessType = escapeHtml(businessType || "Not provided");
+    const safePreferredMode = escapeHtml(preferredMode || "Not provided");
+    const safeUrgency = escapeHtml(urgency || "Not provided");
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
     const html = `
@@ -228,6 +238,11 @@ export async function POST(request: Request) {
             <p><strong>Email:</strong> ${safeEmail}</p>
             <p><strong>Phone:</strong> ${safePhone}</p>
             <p><strong>Service Needed:</strong> ${safeService}</p>
+            <p><strong>Consultation Type:</strong> ${safeConsultationType}</p>
+            <p><strong>Package Interest:</strong> ${safePackageName}</p>
+            <p><strong>Business Type:</strong> ${safeBusinessType}</p>
+            <p><strong>Preferred Mode:</strong> ${safePreferredMode}</p>
+            <p><strong>Timeline:</strong> ${safeUrgency}</p>
 
             <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
 
@@ -246,6 +261,11 @@ Company: ${company || "Not provided"}
 Email: ${email}
 Phone: ${phone || "Not provided"}
 Service Needed: ${service || "Not provided"}
+Consultation Type: ${consultationType || "Not provided"}
+Package Interest: ${packageName || "Not provided"}
+Business Type: ${businessType || "Not provided"}
+Preferred Mode: ${preferredMode || "Not provided"}
+Timeline: ${urgency || "Not provided"}
 
 Message:
 ${message}

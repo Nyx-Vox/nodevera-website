@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ServicePackagesSection from "@/components/ServicePackagesSection";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -70,7 +71,7 @@ export default function ServicesPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/#contact"
+                href="/consultation"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
               >
                 Book Consultation
@@ -78,10 +79,10 @@ export default function ServicesPage() {
               </Link>
 
               <Link
-                href="/services/cyber-readiness-assessment"
+                href="/free-cyber-readiness-checklist"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-navy-950"
               >
-                Start with Cyber Audit
+                Free Checklist
               </Link>
             </div>
           </div>
@@ -183,6 +184,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <ServicePackagesSection />
+
       {/* CTA */}
       <section className="px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[2rem] bg-navy-950 p-7 text-white shadow-2xl shadow-navy-950/20 sm:p-10 lg:p-12">
@@ -201,10 +204,10 @@ export default function ServicesPage() {
             </div>
 
             <Link
-              href="/#contact"
+              href="/consultation"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
             >
-              Contact NodeVera
+              Book Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
