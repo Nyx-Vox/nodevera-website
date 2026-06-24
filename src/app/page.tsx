@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import ServicePackagesSection from "@/components/ServicePackagesSection";
+import OurProcessSection from "@/components/OurProcessSection";
+import ScenarioSection from "@/components/ScenarioSection";
 import { siteConfig } from "@/lib/site";
 
 import {
@@ -415,6 +417,10 @@ export default function Home() {
       </section>
 
       <ServicePackagesSection />
+
+      <OurProcessSection compact />
+
+      <ScenarioSection compact />
 
       {/* Audit */}
       <section id="audit" className="bg-navy-950 py-16 text-white">

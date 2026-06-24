@@ -169,6 +169,7 @@ export async function POST(request: Request) {
     const message = cleanText(body.message, MAX_FIELD_LENGTH);
     const website = cleanText(body.website, 120);
     const consultationType = cleanText(body.consultationType, 160);
+    const concern = cleanText(body.concern, 220);
     const packageName = cleanText(body.packageName, 160);
     const businessType = cleanText(body.businessType, 160);
     const preferredMode = cleanText(body.preferredMode, 120);
@@ -218,6 +219,7 @@ export async function POST(request: Request) {
     const safePhone = escapeHtml(phone || "Not provided");
     const safeService = escapeHtml(service || "Not provided");
     const safeConsultationType = escapeHtml(consultationType || "Not provided");
+    const safeConcern = escapeHtml(concern || "Not provided");
     const safePackageName = escapeHtml(packageName || "Not provided");
     const safeBusinessType = escapeHtml(businessType || "Not provided");
     const safePreferredMode = escapeHtml(preferredMode || "Not provided");
@@ -239,6 +241,7 @@ export async function POST(request: Request) {
             <p><strong>Phone:</strong> ${safePhone}</p>
             <p><strong>Service Needed:</strong> ${safeService}</p>
             <p><strong>Consultation Type:</strong> ${safeConsultationType}</p>
+            <p><strong>Main Concern:</strong> ${safeConcern}</p>
             <p><strong>Package Interest:</strong> ${safePackageName}</p>
             <p><strong>Business Type:</strong> ${safeBusinessType}</p>
             <p><strong>Preferred Mode:</strong> ${safePreferredMode}</p>
@@ -262,6 +265,7 @@ Email: ${email}
 Phone: ${phone || "Not provided"}
 Service Needed: ${service || "Not provided"}
 Consultation Type: ${consultationType || "Not provided"}
+Main Concern: ${concern || "Not provided"}
 Package Interest: ${packageName || "Not provided"}
 Business Type: ${businessType || "Not provided"}
 Preferred Mode: ${preferredMode || "Not provided"}

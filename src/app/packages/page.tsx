@@ -15,6 +15,8 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicePackagesSection from "@/components/ServicePackagesSection";
+import OurProcessSection from "@/components/OurProcessSection";
+import SectionExplorer from "@/components/SectionExplorer";
 import {
   packagePricingNotes,
   packageTracks,
@@ -161,6 +163,18 @@ export default function PackagesPage() {
         </div>
       </section>
 
+      <SectionExplorer
+        eyebrow="Package navigation"
+        title="Move quickly between packages, services, industries, and consultation."
+        description="Use these shortcuts if you want to compare packages with services or choose by industry instead."
+        items={[
+          { label: "All Packages", href: "/packages", eyebrow: "Current", description: "Review package options and starting prices", active: true },
+          { label: "Services", href: "/services", eyebrow: "Compare", description: "Understand the full service scope behind each package" },
+          { label: "Industries", href: "/industries", eyebrow: "Choose by business type", description: "Find risks and package fit for your industry" },
+          { label: "Book Consultation", href: "/consultation", eyebrow: "Next step", description: "Tell us your concern and receive the right scope" },
+        ]}
+      />
+
       <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -195,6 +209,8 @@ export default function PackagesPage() {
       </section>
 
       <ServicePackagesSection />
+
+      <OurProcessSection compact />
 
       <section className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">

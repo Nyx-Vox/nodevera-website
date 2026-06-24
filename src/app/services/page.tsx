@@ -9,6 +9,7 @@ import {
   FileCheck2,
   GraduationCap,
   MailCheck,
+  ShieldAlert,
   ShieldCheck,
   Sparkles,
   Target,
@@ -16,6 +17,8 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicePackagesSection from "@/components/ServicePackagesSection";
+import OurProcessSection from "@/components/OurProcessSection";
+import ScenarioSection from "@/components/ScenarioSection";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -31,6 +34,9 @@ const icons = [
   GraduationCap,
   MailCheck,
   BadgeCheck,
+  ShieldAlert,
+  MailCheck,
+  CloudCog,
 ];
 
 const problemCards = [
@@ -326,6 +332,10 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <OurProcessSection compact dark />
+
+      <ScenarioSection compact />
 
       <ServicePackagesSection compact />
 

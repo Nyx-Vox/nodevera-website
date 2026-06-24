@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { CalendarCheck, ClipboardList, MessageCircle, ShieldCheck } from "lucide-react";
+import { CalendarCheck, ClipboardList, Clock3, MessageCircle, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConsultationForm from "@/components/ConsultationForm";
@@ -15,27 +15,33 @@ export const metadata: Metadata = {
 const flow = [
   {
     icon: ClipboardList,
-    title: "Tell us the concern",
+    title: "Step 1: Choose your concern",
     description:
-      "Share what you want to protect, what happened, or what you want to improve.",
-  },
-  {
-    icon: MessageCircle,
-    title: "We confirm the scope",
-    description:
-      "NodeVera reviews your request and confirms the right starting point before quoting.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Schedule the session",
-    description:
-      "We agree on WhatsApp call, phone call, Google Meet, or email first depending on your preference.",
+      "Tell us whether you need general readiness, urgent help, email protection, payment fraud prevention, data support, or staff training.",
   },
   {
     icon: ShieldCheck,
-    title: "Get practical next steps",
+    title: "Step 2: Select your business type",
     description:
-      "You receive clear guidance on what to fix first and which package makes sense.",
+      "We match the advice to your industry, such as school, clinic, law firm, accounting firm, ecommerce, NGO, real estate, or SME.",
+  },
+  {
+    icon: Clock3,
+    title: "Step 3: Select urgency",
+    description:
+      "Let us know whether this is an urgent issue, a this-week need, a this-month plan, or an early research stage.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Step 4: Select package interest",
+    description:
+      "Choose the package that looks closest to your need or select Not Sure Yet so we can guide you.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Step 5: Submit details",
+    description:
+      "Send your contact details and context. We review it and respond with the next practical step.",
   },
 ];
 

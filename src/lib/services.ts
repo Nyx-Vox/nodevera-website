@@ -389,6 +389,190 @@ export const services: Service[] = [
       "Start with one month of advisory after a readiness assessment so the highest priority fixes actually get implemented.",
     recommendedPackage: "Monthly Cyber Advisor",
   },
+
+  {
+    slug: "business-email-compromise-support",
+    title: "Business Email Compromise Support",
+    shortTitle: "Email Compromise",
+    description:
+      "First response and prevention support when business email accounts may be compromised or used for suspicious messages.",
+    summary:
+      "For businesses worried that an email account has been accessed, used to send strange messages, or involved in fake invoice or payment instruction attempts.",
+    longDescription:
+      "Business Email Compromise Support helps organizations respond calmly when email accounts, inbox rules, payment conversations, or login activity look suspicious. NodeVera helps you understand what may be affected, what to secure first, what evidence to keep, and what changes can reduce repeat exposure. This service is especially useful when the business relies on email for invoices, approvals, client communication, vendor instructions, or management decisions.",
+    benefits: [
+      "Respond faster to suspicious email activity",
+      "Reduce further account exposure",
+      "Improve email account protection after an incident",
+      "Protect payment and vendor communication",
+      "Give management a clear first response plan",
+    ],
+    includes: [
+      "Initial incident triage guidance",
+      "Email account security review",
+      "Suspicious login and inbox rule review guidance",
+      "Password reset, session revocation, and MFA guidance",
+      "Payment fraud containment checklist",
+      "Post incident improvement recommendations",
+    ],
+    bestFor: [
+      "Law firms",
+      "Accounting firms",
+      "Real estate firms",
+      "NGOs",
+      "Finance and admin teams",
+      "Businesses using email for payments or approvals",
+    ],
+    painPoints: [
+      "A business email account may have been accessed by an unauthorized person.",
+      "Clients, vendors, or staff may have received suspicious messages from a legitimate account.",
+      "The business is not sure whether payment instructions, inbox rules, or account settings were changed.",
+      "Management needs urgent guidance before the issue spreads or causes financial loss.",
+    ],
+    process: [
+      "We collect the timeline, affected account details, screenshots, suspicious messages, and actions already taken.",
+      "We guide containment steps such as password reset, MFA, session revocation, recovery setting review, and suspicious rule checks.",
+      "We help identify whether clients, staff, vendors, or payment conversations need urgent verification.",
+      "We provide post incident recommendations to reduce repeat compromise and improve staff awareness.",
+    ],
+    deliverables: [
+      "Email compromise triage summary",
+      "Containment checklist",
+      "Payment verification guidance",
+      "Post incident improvement notes",
+      "Staff warning recommendations",
+    ],
+    outcomes: [
+      "Your business responds with order instead of panic.",
+      "You reduce the chance of further misuse of the affected account.",
+      "You know what to fix after the urgent issue is contained.",
+    ],
+    quickWin:
+      "If you suspect email compromise, preserve evidence, stop unusual payments, reset from a clean device, and request urgent triage.",
+    recommendedPackage: "Incident Response First Aid",
+  },
+  {
+    slug: "payment-fraud-prevention-setup",
+    title: "Payment Fraud Prevention Setup",
+    shortTitle: "Payment Fraud",
+    description:
+      "Practical payment verification and approval controls to reduce fake invoice, bank detail change, and impersonation risks.",
+    summary:
+      "For businesses that move money, approve vendor payments, receive invoices, send bank details, or rely on email and WhatsApp for financial instructions.",
+    longDescription:
+      "Payment Fraud Prevention Setup helps businesses create simple verification steps before money is sent. The goal is to reduce rushed approvals, fake invoices, changed bank details, vendor impersonation, director impersonation, and email thread manipulation. This service is not about making your payment process slow. It is about adding practical checks where fraud can happen.",
+    benefits: [
+      "Reduce payment diversion risk",
+      "Improve approval discipline for sensitive payments",
+      "Help staff verify urgent requests before acting",
+      "Protect clients, vendors, and internal finance processes",
+      "Create clearer accountability for money movement",
+    ],
+    includes: [
+      "Payment approval process review",
+      "Bank detail change verification procedure",
+      "Fake invoice and vendor impersonation warning guide",
+      "Finance and admin staff verification checklist",
+      "Escalation steps for suspicious payment requests",
+      "Email and WhatsApp payment communication guidance",
+    ],
+    bestFor: [
+      "Real estate firms",
+      "Logistics companies",
+      "Law firms",
+      "Accounting firms",
+      "Importers and trading businesses",
+      "NGOs and project teams",
+    ],
+    painPoints: [
+      "The business approves payments through email, WhatsApp, calls, or informal confirmation.",
+      "Staff may act quickly when a director, client, or vendor sends an urgent payment message.",
+      "Bank detail changes are not independently verified before payment.",
+      "Finance teams need a simple checklist to prevent avoidable losses.",
+    ],
+    process: [
+      "We map how payment requests, approvals, invoices, and bank detail changes currently move through the business.",
+      "We identify weak points where impersonation, rushed approval, or fake invoice fraud can happen.",
+      "We create a practical verification process that fits your staff size and business style.",
+      "We provide staff guidance so finance, admin, and management know how to pause and verify.",
+    ],
+    deliverables: [
+      "Payment risk summary",
+      "Payment verification checklist",
+      "Bank detail change procedure",
+      "Suspicious payment escalation guide",
+      "Staff awareness notes",
+    ],
+    outcomes: [
+      "Your staff know how to verify payment instructions before money leaves the business.",
+      "The business has a clearer approval process for unusual or sensitive payments.",
+      "You reduce preventable losses from fake invoices and impersonation.",
+    ],
+    quickWin:
+      "Never approve changed bank details only by email or WhatsApp. Verify using an existing trusted phone contact before payment.",
+    recommendedPackage: "Business Email and Payment Fraud Protection",
+  },
+  {
+    slug: "microsoft-365-google-workspace-security-setup",
+    title: "Microsoft 365 and Google Workspace Security Setup",
+    shortTitle: "Workspace Security",
+    description:
+      "Safer configuration for business email, users, MFA, admin roles, recovery settings, and shared cloud access.",
+    summary:
+      "For businesses using Microsoft 365, Google Workspace, company email, shared drives, cloud documents, and admin accounts.",
+    longDescription:
+      "Microsoft 365 and Google Workspace Security Setup helps businesses configure safer email and cloud environments. Many SMEs use company email but leave admin accounts, recovery settings, MFA, user access, shared drives, and former staff accounts poorly controlled. NodeVera helps review and improve the most important settings so the business has better control over its cloud identity and communication tools.",
+    benefits: [
+      "Improve protection for company email accounts",
+      "Reduce account takeover risk with MFA and admin control",
+      "Clean up former staff and unnecessary access",
+      "Improve shared drive and document access control",
+      "Strengthen business ownership of cloud tools",
+    ],
+    includes: [
+      "Microsoft 365 or Google Workspace security review",
+      "MFA and recovery setting guidance",
+      "Admin role and user access review",
+      "Former staff and dormant account cleanup guidance",
+      "Shared drive and document permission review",
+      "Email authentication and basic security recommendations",
+    ],
+    bestFor: [
+      "SMEs using company email",
+      "Schools and clinics",
+      "Professional service firms",
+      "Remote teams",
+      "Organizations using shared cloud drives",
+      "Businesses without internal IT administrators",
+    ],
+    painPoints: [
+      "Company email exists but MFA, admin roles, and recovery settings are not properly managed.",
+      "Former staff, vendors, or old administrators may still have access.",
+      "Cloud files are shared too widely or owned by personal accounts.",
+      "The business needs practical help securing email and cloud tools without enterprise complexity.",
+    ],
+    process: [
+      "We understand your current email and cloud environment, including users, admin accounts, and key business folders.",
+      "We review MFA, recovery settings, user roles, former staff access, shared files, and basic email protection settings.",
+      "We recommend configuration changes and access cleanup steps based on your business size and tools.",
+      "We provide a simple maintenance checklist so the business can keep accounts safer over time.",
+    ],
+    deliverables: [
+      "Workspace security summary",
+      "MFA and admin role recommendations",
+      "Access cleanup checklist",
+      "Shared drive permission notes",
+      "Ongoing account management checklist",
+    ],
+    outcomes: [
+      "Your business gains better control over email and cloud accounts.",
+      "You reduce avoidable exposure from weak settings and unnecessary access.",
+      "Staff onboarding and exit become easier to manage safely.",
+    ],
+    quickWin:
+      "Start by enabling MFA on admin accounts, confirming recovery settings, and removing former staff access.",
+    recommendedPackage: "Website, Cloud and Vendor Access Review",
+  }
 ];
 
 export function getServiceBySlug(slug: string) {

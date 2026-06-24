@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SectionExplorer from "@/components/SectionExplorer";
 import { getServiceBySlug, services } from "@/lib/services";
 import { getServiceFaqs } from "@/lib/service-faqs";
 
@@ -58,6 +59,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const relatedServices = services
     .filter((item) => item.slug !== service.slug)
     .slice(0, 3);
+
+  const serviceLinks = services.map((item) => ({
+    label: item.shortTitle || item.title,
+    href: `/services/${item.slug}`,
+    eyebrow: item.slug === service.slug ? "Current" : "Service",
+    description: item.slug === service.slug ? "You are viewing this service" : item.summary,
+    active: item.slug === service.slug,
+  }));
 
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -164,6 +173,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </aside>
         </div>
       </section>
+
+      <SectionExplorer
+        eyebrow="Browse services"
+        title="Switch between services without returning to the main menu."
+        description="Compare related services and move to the next area your business needs to review."
+        items={serviceLinks}
+      />
 
       <section className="bg-slate-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">

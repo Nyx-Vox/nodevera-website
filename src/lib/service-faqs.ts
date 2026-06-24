@@ -159,6 +159,58 @@ const serviceFaqMap: Record<string, ServiceFaq[]> = {
         "Yes. That is often the best approach. The assessment shows what needs attention, then monthly advisory helps ensure the priority fixes are followed through.",
     },
   ],
+
+  "business-email-compromise-support": [
+    {
+      question: "What should we do first if we suspect email compromise?",
+      answer:
+        "Preserve suspicious messages and screenshots, stop unusual payments, change passwords from a clean device, revoke active sessions where possible, and enable MFA. NodeVera can help you triage the next steps.",
+    },
+    {
+      question: "Is this a full forensic investigation?",
+      answer:
+        "No. This is first response support and practical containment guidance. If deep forensic investigation is required, the scope will be discussed separately.",
+    },
+    {
+      question: "Can this help with fake invoices?",
+      answer:
+        "Yes. We review the email and payment communication risk and help the business create a verification process for suspicious invoices and bank detail changes.",
+    },
+  ],
+  "payment-fraud-prevention-setup": [
+    {
+      question: "Who needs payment fraud prevention setup?",
+      answer:
+        "Any business that approves vendor payments, receives invoices, sends bank details, handles client funds, or relies on email and WhatsApp for payment instructions should have a verification process.",
+    },
+    {
+      question: "Will this slow down our payments?",
+      answer:
+        "The goal is not to slow the business down. The goal is to add simple checks for unusual, urgent, or changed payment instructions before money leaves the business.",
+    },
+    {
+      question: "Do you train finance staff?",
+      answer:
+        "Yes. We can train finance, admin, operations, and management staff on fake invoices, changed bank details, vendor impersonation, and urgent payment scams.",
+    },
+  ],
+  "microsoft-365-google-workspace-security-setup": [
+    {
+      question: "Can you help with both Google Workspace and Microsoft 365?",
+      answer:
+        "Yes. NodeVera can review practical account, MFA, admin role, recovery, shared drive, and former staff access issues in either environment.",
+    },
+    {
+      question: "Do we need an internal IT person?",
+      answer:
+        "No. We can explain the recommended changes clearly and work with management, an existing IT vendor, or your internal support person where available.",
+    },
+    {
+      question: "What is the first thing to fix?",
+      answer:
+        "Start with MFA on admin accounts, ownership of recovery settings, former staff account cleanup, and limiting admin roles to only necessary people.",
+    },
+  ],
 };
 
 export function getServiceFaqs(slug: string) {
