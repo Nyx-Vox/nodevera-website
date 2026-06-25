@@ -22,10 +22,10 @@ const resources = [
   {
     title: "Sample Cyber Readiness Report",
     description:
-      "Preview how NodeVera presents findings, priority risks, evidence notes, recommendations, and a practical action roadmap.",
+      "Preview the report structure and download the real PDF sample showing findings, priority risks, evidence notes, recommendations, and a practical action roadmap.",
     href: "/sample-report-preview",
     icon: FileText,
-    tag: "Report preview",
+    tag: "PDF download",
   },
   {
     title: "Blog Articles",

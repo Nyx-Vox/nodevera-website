@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, Download, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { reportPreviewSections } from "@/lib/packages";
@@ -13,19 +13,24 @@ export const metadata: Metadata = {
 
 const sampleFindings = [
   {
-    area: "Email Security",
-    rating: "Medium Risk",
-    note: "MFA is not consistently enabled for key accounts and recovery controls should be reviewed.",
-  },
-  {
-    area: "Staff Awareness",
+    area: "Email and MFA",
     rating: "High Risk",
-    note: "Staff have not received recent phishing or payment fraud awareness training.",
+    note: "Critical business email, finance, owner, and administrator accounts require consistent MFA and recovery control review.",
   },
   {
-    area: "Data Handling",
+    area: "Payment Fraud Controls",
+    rating: "High Risk",
+    note: "Vendor bank detail changes, urgent payment requests, and invoice amendments should follow a documented verification process.",
+  },
+  {
+    area: "Access and Former Staff",
+    rating: "High Risk",
+    note: "Former staff, developer, vendor, website, cloud, and shared admin access should be reviewed and cleaned up.",
+  },
+  {
+    area: "Backup and Recovery",
     rating: "Medium Risk",
-    note: "Sensitive files are shared across multiple channels without a clear access control process.",
+    note: "Backups should be mapped to critical business files and tested so the business knows recovery will work.",
   },
 ];
 
@@ -56,8 +61,7 @@ export default function SampleReportPreviewPage() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-              This preview shows the kind of structure and business friendly
-              language your organization can receive after a cyber readiness assessment.
+              This preview shows how NodeVera turns cyber risk into a management friendly report with findings, business impact, evidence to confirm, recommended actions, owners, and timelines.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -69,13 +73,19 @@ export default function SampleReportPreviewPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
 
-              <Link
-                href="/free-cyber-readiness-checklist"
+              <a
+                href="/downloads/nodevera-sample-cyber-readiness-report.pdf"
+                download
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-navy-950"
               >
-                Open Checklist
-              </Link>
+                Download PDF Report
+                <Download className="ml-2 h-5 w-5" />
+              </a>
             </div>
+
+            <p className="mt-4 text-sm font-semibold leading-6 text-slate-400">
+              Prefer to assess your business first? <Link href="/free-cyber-readiness-checklist" className="font-black text-cyan-300 hover:text-white">Open the free readiness checklist</Link>.
+            </p>
           </div>
 
           <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
@@ -136,6 +146,23 @@ export default function SampleReportPreviewPage() {
               The goal is to give leadership and operators a clear view of the
               current risks, likely impact, and practical next actions.
             </p>
+          </div>
+
+          <div className="mt-8 rounded-[1.5rem] border border-cyan-100 bg-cyan-50 p-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
+            <div>
+              <h3 className="text-lg font-black text-navy-950">Download the detailed sample report as a PDF</h3>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
+                The downloadable sample is a detailed 17-page PDF with executive summary, scoring method, risk snapshot, priority findings, detailed action recommendations, ownership, timelines, roadmap, implementation tracker, evidence request checklist, and severity guide.
+              </p>
+            </div>
+            <a
+              href="/downloads/nodevera-sample-cyber-readiness-report.pdf"
+              download
+              className="mt-4 inline-flex shrink-0 items-center justify-center rounded-full bg-navy-950 px-6 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-cyan-600 sm:mt-0"
+            >
+              Download PDF
+              <Download className="ml-2 h-4 w-4" />
+            </a>
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -217,13 +244,23 @@ export default function SampleReportPreviewPage() {
               </p>
             </div>
 
-            <Link
-              href="/consultation?package=Cyber%20Readiness%20Starter"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
-            >
-              Book Assessment
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <div className="grid gap-3 sm:grid-cols-2 lg:w-[34rem]">
+              <a
+                href="/downloads/nodevera-sample-cyber-readiness-report.pdf"
+                download
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-navy-950"
+              >
+                Download PDF
+                <Download className="ml-2 h-5 w-5" />
+              </a>
+              <Link
+                href="/consultation?package=Cyber%20Readiness%20Starter"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-7 py-4 font-black text-navy-950 transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                Book Assessment
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

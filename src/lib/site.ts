@@ -6,9 +6,9 @@ export const siteConfig = {
   url: "https://nodeveracyber.com",
 
   email: "info@nodeveracyber.com",
-  phoneDisplay: "+234 816 233 3412",
-  phoneHref: "+2348162333412",
-  whatsappNumber: "2348162333412",
+  phoneDisplay: "+234 703 562 2388",
+  phoneHref: "+2347035622388",
+  whatsappNumber: "2347035622388",
 
   serviceArea: "Nigeria and remote business support",
 
