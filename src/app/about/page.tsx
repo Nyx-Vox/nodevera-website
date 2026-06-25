@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 };
 
 const credibility = [
-  "Cybersecurity consultant",
-  "CompTIA Security Plus certified",
-  "Cybersecurity and IT instructor",
-  "Experience across IT support, systems, business technology, and cybersecurity advisory",
-  "Focused on practical security guidance for SMEs and growing organizations",
+  "CompTIA Security+ | CISSP | CISM | CEH",
+
+  "Seasoned cybersecurity consultant with extensive hands-on experience in IT support, systems administration, business technology, and security advisory.",
+
+  "Delivering practical, high impact security strategies that protect SMEs and growing organizations  reducing risk while enabling confident growth.",
 ];
 
 const principles = [
